@@ -1,0 +1,21 @@
+
+
+The code uses four libraries:
+	opencv
+	libgv
+	pygraph
+	nltk
+All libraries are more or essential for code execution.
+To run the code on your own Machine you will need to install
+and configure all these libraries. 
+Some more libraries may be added as the code development
+progresses.
+
+For implementing extractive summary, text rank algo is chosen.
+The main code resides in textrank.py and is written in python.
+The sample text should be in sample.txt file. Execution of code will
+generate a png file showing a graph relationship of words
+in sample.txt file
+
+Please try to find any bugs or suggest improvements.
+

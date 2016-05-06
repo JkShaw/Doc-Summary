@@ -1,0 +1,20 @@
+BuildGraph(text):
+    wordRelation=graph()
+    sentence_id=1
+    foreach sentence in text
+    list.add_sentence(sentence)
+    wordRelation.add_node(sentence_id)
+    sentence_id++
+    previousWord=''
+    foreach presentWord in sentence
+        if(!presentWord.isdigit())
+            presentWord=stem_word(presentWord)
+            if(!stop_word(presentWord) && presentWord!=previousWord)
+                if(!wordRelation.is_node(presentWord))
+                    wordRelation.add_node(presentWord)
+                if(previousWord!='')
+                    wordRelation.add_edge(presentWord, previousWord)
+                presentWord=previousWord
+                wordRelation.add_edge(sentence_id, presentWord)
+    return wordRelation
+
